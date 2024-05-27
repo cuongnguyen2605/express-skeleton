@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "0bc7d01d-e94a-4a8e-b41c-3497d6d4a355",
+		"name": "Express",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30079153",
+		"_collection_link": "https://vision-direct-club.postman.co/workspace/New-Team-Workspace~e5d762e0-c9a8-4b06-bced-b089b50de847/collection/30079153-0bc7d01d-e94a-4a8e-b41c-3497d6d4a355?action=share&source=collection_link&creator=30079153"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/v1/auth/sign-up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Cuong\",\n    \"username\": \"cuongnm\",\n    \"password\": \"P@$$w0rd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/auth/sign-up",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"auth",
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/v1/auth/sign-in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"cuongnm\",\n    \"password\": \"P@$$w0rd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/auth/sign-in",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"auth",
+						"sign-in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/v1/auth/sign-out",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjU0YzNkNzNjOGE2NWI1MGMzMDM0NzYiLCJpYXQiOjE3MTY4MzEyMDksImV4cCI6MTcxNjkxNzYwOSwidHlwZSI6IkFDQ0VTU19UT0tFTiJ9.H-SSaW0jc--91Kvp-clM0gUgSEdjV-VerUesNgTZmgI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjU0YzNkNzNjOGE2NWI1MGMzMDM0NzYiLCJpYXQiOjE3MTY4MzEyMDksImV4cCI6MTcxNzQzNjAwOSwidHlwZSI6IlJFRlJFU0hfVE9LRU4ifQ.o6Kpo_aRR7bIpFuaytj6cMub2WQnq50fYfAyZHze7xA\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/auth/sign-out",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"auth",
+						"sign-out"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/v1/users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjU0YzNkNzNjOGE2NWI1MGMzMDM0NzYiLCJpYXQiOjE3MTY4MzIwNDYsImV4cCI6MTcxNjkxODQ0NiwidHlwZSI6IkFDQ0VTU19UT0tFTiJ9.LKDz6K_1dzNeRJyN1FD1WKJK-EcYtNzlNqpHaBmJbek",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/v1/users/6654c3d73c8a65b50c303476",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjU0YzNkNzNjOGE2NWI1MGMzMDM0NzYiLCJpYXQiOjE3MTY4MzIwNDYsImV4cCI6MTcxNjkxODQ0NiwidHlwZSI6IkFDQ0VTU19UT0tFTiJ9.LKDz6K_1dzNeRJyN1FD1WKJK-EcYtNzlNqpHaBmJbek",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/users/6654c3d73c8a65b50c303476",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"users",
+						"6654c3d73c8a65b50c303476"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/v1/users/6654c3d73c8a65b50c303476",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjU0YzNkNzNjOGE2NWI1MGMzMDM0NzYiLCJpYXQiOjE3MTY4MzIwNDYsImV4cCI6MTcxNjkxODQ0NiwidHlwZSI6IkFDQ0VTU19UT0tFTiJ9.LKDz6K_1dzNeRJyN1FD1WKJK-EcYtNzlNqpHaBmJbek",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"lastName\": \"Nguyen 1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/users/6654c3d73c8a65b50c303476",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"users",
+						"6654c3d73c8a65b50c303476"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/v1/users/6654c3d73c8a65b50c303476",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjU0YzNkNzNjOGE2NWI1MGMzMDM0NzYiLCJpYXQiOjE3MTY4MzIwNDYsImV4cCI6MTcxNjkxODQ0NiwidHlwZSI6IkFDQ0VTU19UT0tFTiJ9.LKDz6K_1dzNeRJyN1FD1WKJK-EcYtNzlNqpHaBmJbek",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/users/6654c3d73c8a65b50c303476",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"users",
+						"6654c3d73c8a65b50c303476"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
