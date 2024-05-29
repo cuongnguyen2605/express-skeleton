@@ -2,10 +2,10 @@ const jwt = require('jsonwebtoken');
 const moment = require('moment');
 
 const ApiError = require('../utils/ApiError');
-const redisService = require('./redis.service');
 const { TOKEN, MESSAGE } = require('../consts');
+const { redis } = require('../libs');
 
-const saveToken = (token, expires) => redisService.setEx(token, token, expires);
+const saveToken = (token, expires) => redis.setEx(token, token, expires);
 
 const generateToken = (userId, expires, type, secret = process.env.SECRET) => {
   const payload = {
@@ -43,7 +43,7 @@ const generateAuthTokens = async (userId) => {
 const verifyToken = async (token) => {
   const payload = jwt.verify(token, process.env.SECRET);
 
-  const tokenDoc = await redisService.get(token);
+  const tokenDoc = await redis.get(token);
   if (!tokenDoc) {
     throw new ApiError(MESSAGE.TOKEN_NOT_FOUND);
   }

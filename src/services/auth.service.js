@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const { StatusCodes } = require('http-status-codes');
 
 const ApiError = require('../utils/ApiError');
-const redisService = require('./redis.service');
 const tokenService = require('./token.service');
 const { MESSAGE } = require('../consts');
+const { redis } = require('../libs');
 const { AuthModel, UserModel } = require('../models');
 
 const signUp = async (payload) => {
@@ -28,8 +28,7 @@ const signUp = async (payload) => {
     user: userId,
   });
 
-  const res = await Promise.all([userDoc.save(), authDoc.save()]);
-  return res[0];
+  return Promise.all([userDoc.save(), authDoc.save()]);
 };
 
 const signIn = async (payload) => {
@@ -45,7 +44,7 @@ const signIn = async (payload) => {
   return tokenService.generateAuthTokens(auth.user);
 };
 
-const signOut = (payload) => redisService.get(payload.refreshToken);
+const signOut = (payload) => redis.get(payload.refreshToken);
 
 module.exports = {
   signUp,

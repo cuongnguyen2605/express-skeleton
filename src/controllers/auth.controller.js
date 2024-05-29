@@ -4,12 +4,12 @@ const { authService } = require('../services');
 
 const signUp = async (req, res, next) => {
   try {
-    const auth = await authService.signUp(req.body);
+    const response = await authService.signUp(req.body);
 
     res.status(StatusCodes.CREATED).json({
       statusCode: StatusCodes.CREATED,
       message: ReasonPhrases.CREATED,
-      data: auth,
+      data: response[0],
     });
   } catch (error) {
     next(error);
@@ -26,8 +26,6 @@ const signIn = async (req, res, next) => {
       data: response,
     });
   } catch (error) {
-    console.log(error)
-
     next(error);
   }
 };
